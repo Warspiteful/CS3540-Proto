@@ -2,9 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu]
 public class Task : ScriptableObject
 {
-    public bool isCompleted;
+    private bool isCompleted;
+
+    public VariableUpdated ValueUpdated;
     
-    [SerializeField] private string Description;
+    public string Description;
+
+    public bool IsCompleted
+    {
+        get
+        {
+            return isCompleted;
+        }
+
+        set
+        {
+            isCompleted = value;
+            ValueUpdated();
+        }
+    }
 }
