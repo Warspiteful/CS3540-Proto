@@ -18,7 +18,10 @@ public class FieldOfViewEditor : Editor
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleA * fow.GetRadius());
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleB * fow.GetRadius());
 
-        
+        foreach (Transform visibleTarget in fow.visibleTargets)
+        {
+            Handles.DrawLine(fow.transform.position, visibleTarget.transform.position);
+        }
 
     }
 }
