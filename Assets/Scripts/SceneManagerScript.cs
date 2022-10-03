@@ -20,7 +20,7 @@ public class SceneManagerScript : MonoBehaviour
     
     public void StartGame()
     {
-        SceneManager.LoadScene("Area1");
+        SceneManager.LoadScene("Area0");
     }
 
     public void QuitGame()
