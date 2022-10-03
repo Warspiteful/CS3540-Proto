@@ -7,12 +7,15 @@ using UnityEngine;
 
 public class TutorailTextTrigger : MonoBehaviour
 {
-    public GameObject text1;
-    
+    public GameObject text;
+    // Bool to keep track of if the text has already been shown to the player.
+    private bool triggered = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        text.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -22,13 +25,25 @@ public class TutorailTextTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered");
-        text1.SetActive(true);
+        if (other.CompareTag("Player") && !triggered)
+        {
+            Debug.Log("entered " + text.name);
+            text.SetActive(true);
+            triggered = true;
+        }
+
     }
     
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("left");
-        text1.SetActive(false);
+        
+        if (other.CompareTag("Player"))
+        {
+            triggered = true;
+
+            Debug.Log("left " + text.name);
+            text.SetActive(false);
+        }
+
     }
 }
