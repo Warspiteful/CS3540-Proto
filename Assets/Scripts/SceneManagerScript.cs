@@ -27,6 +27,22 @@ public class SceneManagerScript : MonoBehaviour
     {
         Application.Quit();
     }
-    
-    
+
+    public void NextLevel()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            NextLevel();
+        }
+    }
+
+
+
+
 }
