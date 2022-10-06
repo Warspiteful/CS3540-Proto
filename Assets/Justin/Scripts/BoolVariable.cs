@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu]
 public class BoolVariable : ScriptableObject
 {
     public VariableUpdated valueUpdated;
-    private bool value;
+    [SerializeField] private bool value;
     
     public bool Value{
         get {
             return value;
         }
         set {
-            value = Value;
+            this.value = value;
             valueUpdated();
         }
     }

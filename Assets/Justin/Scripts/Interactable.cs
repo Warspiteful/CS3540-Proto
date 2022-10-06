@@ -10,16 +10,19 @@ public class Interactable : MonoBehaviour
     [SerializeField] private UnityEvent onInteract;
 
     [SerializeField] private bool canInteract;
+    
+    [SerializeField] private Condition lockCondition;
 
 
     private void Update()
     {
         if(canInteract)
         {
-            if (Input.GetButtonDown("Interact"))
-            {
-                Interact();
-            }
+            if(lockCondition == null || lockCondition.isComplete())
+                if (Input.GetButtonDown("Interact"))
+                {
+                    Interact();
+                }
         }
         
     }
@@ -31,12 +34,17 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        canInteract = true;
+        if(other.CompareTag("Player")){
+            canInteract = true;
+        }
     }
     
     private void OnTriggerExit(Collider other)
     {
-        canInteract = false;
+        if (other.CompareTag("Player"))
+        {
+            canInteract = false;
+        }
     }
     
 }

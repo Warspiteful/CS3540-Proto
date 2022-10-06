@@ -1170,10 +1170,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 3a2e1816ad332604cb086ecf223d76d0, type: 2}
-        m_TargetAssemblyTypeName: Task, Assembly-CSharp
-        m_MethodName: set_IsCompleted
-        m_Mode: 6
+      - m_Target: {fileID: 11400000, guid: 13e1a0260cc4a87478e3f834d1d24050, type: 2}
+        m_TargetAssemblyTypeName: IntCondition, Assembly-CSharp
+        m_MethodName: Increment
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1296,6 +1296,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1813684294}
     m_Modifications:
+    - target: {fileID: 5799013768133451536, guid: 6a767ca57cf24b64c8b4611ca8a0ecf6,
+        type: 3}
+      propertyPath: TaskList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5799013768133451536, guid: 6a767ca57cf24b64c8b4611ca8a0ecf6,
+        type: 3}
+      propertyPath: TaskList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 13e1a0260cc4a87478e3f834d1d24050,
+        type: 2}
     - target: {fileID: 5799013768133451538, guid: 6a767ca57cf24b64c8b4611ca8a0ecf6,
         type: 3}
       propertyPath: m_Name
