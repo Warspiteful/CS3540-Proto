@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
+
+
+
+
+public GameObject player;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +28,8 @@ public class SceneManagerScript : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Area0");
+        // Put the player at the start of the map
+        player.transform.position = new Vector3(-45f, 0.5f, -13f);
     }
 
     public void QuitGame()
@@ -30,7 +39,10 @@ public class SceneManagerScript : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     public void OnTriggerEnter(Collider other)
