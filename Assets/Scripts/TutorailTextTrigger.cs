@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+// Forcefield stuff
+// https://forum.unity.com/threads/best-way-to-get-swirling-noise.954993/
+
 
 public class TutorailTextTrigger : MonoBehaviour
 {
@@ -30,29 +33,43 @@ public class TutorailTextTrigger : MonoBehaviour
         
     }
 
+    // Show tutorial text when the player enters a trigger zone.
+    // Text remains on screen for a few seconds, or disappears immediately when the player leaves that zone (so it won't overlap with other text).
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !triggered)
         {
-            text.CrossFadeAlpha(1, 1, false);
+            text.CrossFadeAlpha(1, .5f, false);
 
             text.enabled = true;
             Debug.Log("entered " + text.name);
             triggered = true;
+            
+            StartCoroutine(FadeOut());
         }
+        
     }
-    
 
     private void OnTriggerExit(Collider other)
     {
-        text.CrossFadeAlpha(0, 1, false);
+        Destroy(text);
+    }
 
-        if (other.CompareTag("Player"))
+
+    // https://docs.unity3d.com/ScriptReference/WaitForSeconds.html
+    // Fade the text out after waiting a few seconds.
+    IEnumerator FadeOut()
+    {
+        //Print the time of when the function is first called.
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(5);
+        if (text != null)
         {
-            //text.enabled = true;
-            triggered = true;
-
-            Debug.Log("left " + text.name);
+            text.CrossFadeAlpha(0, 2, false);
         }
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }

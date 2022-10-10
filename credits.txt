@@ -1,0 +1,2 @@
+https://forum.unity.com/threads/best-way-to-get-swirling-noise.954993/
+https://learn.unity.com/tutorial/shader-graph-tiling-and-offset-2019-3#
