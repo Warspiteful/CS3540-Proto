@@ -6,12 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneManagerScript : MonoBehaviour
 {
 
+    public Animator transition;
 
-
-
-public GameObject player;
-
-
+    public float transitionTime = 1f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +26,6 @@ public GameObject player;
     public void StartGame()
     {
         SceneManager.LoadScene("Area0");
-        // Put the player at the start of the map
-        player.transform.position = new Vector3(-45f, 0.5f, -13f);
     }
 
     public void QuitGame()
@@ -37,12 +33,26 @@ public GameObject player;
         Application.Quit();
     }
 
+    // Scene transitions 
+    // https://youtu.be/CE9VOZivb3I
     public void NextLevel()
     {
-
-
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadScene(nextSceneIndex);
+
+        StartCoroutine(LoadLevel(nextSceneIndex));
+
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        // play
+        transition.SetTrigger("Start");
+        
+        // wait
+        yield return new WaitForSeconds(transitionTime);
+
+        // load scene
+        SceneManager.LoadScene(levelIndex);
     }
 
     public void OnTriggerEnter(Collider other)
