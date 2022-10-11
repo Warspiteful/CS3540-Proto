@@ -7,19 +7,24 @@ using UnityEngine.UI;
 public class TaskDisplay : MonoBehaviour
 {
 
-    [SerializeField] public Task observedTask;
+    [SerializeField] public Condition observedTask;
     
     [SerializeField] private Toggle TaskFlag;
+    [SerializeField] private Text IntDisplay;
     
     [SerializeField] private Text TaskDesc;
 
-    public void SetTask(Task observed)
+    private ConditionalTasks type;
+
+    public void SetTask(Condition observed)
     {
         if (observedTask != null)
         {
             observedTask.ValueUpdated -= UpdateDisplay;
         }
+
         observedTask = observed;
+        type = observedTask.GetType();
         observedTask.ValueUpdated += UpdateDisplay;
         UpdateDisplay();
     }
@@ -27,7 +32,23 @@ public class TaskDisplay : MonoBehaviour
     // Start is called before the first frame update
     void UpdateDisplay()
     {
-        TaskFlag.isOn = observedTask.IsCompleted;
+        switch (type)
+        {
+            case ConditionalTasks.BOOL:
+                TaskFlag.gameObject.SetActive(true);
+                TaskFlag.isOn = observedTask.isComplete();
+                break;
+            case ConditionalTasks.INT:
+                IntDisplay.gameObject.SetActive(true);
+                IntDisplay.text = observedTask.GetRepresentation();
+                if (observedTask.isComplete())
+                {
+                    IntDisplay.gameObject.SetActive(false);
+                    TaskFlag.gameObject.SetActive(true);
+                    TaskFlag.isOn = observedTask.isComplete();
+                }
+                break;
+        }
         TaskDesc.text = observedTask.Description;
     }
 }
