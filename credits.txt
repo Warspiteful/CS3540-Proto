@@ -1,2 +1,8 @@
 https://forum.unity.com/threads/best-way-to-get-swirling-noise.954993/
 https://learn.unity.com/tutorial/shader-graph-tiling-and-offset-2019-3#
+
+
+rain particles: https://youtu.be/xkB6yzCBfgw
+
+    // Scene transitions 
+    // Code from Brackeys: https://youtu.be/CE9VOZivb3I
