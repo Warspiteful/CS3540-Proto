@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5103234066229017015
+--- !u!114 &-6328741490695274825
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Seamless_asphalt_v1
+  m_Name: Seamless_asphalt_v1_ForProbuilder
   m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
   m_ValidKeywords:
   - _EMISSION
@@ -37,8 +37,8 @@ Material:
     m_TexEnvs:
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: b0fe82528f70e8947aa0d123fa3194fe, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 1, y: 1}
+        m_Scale: {x: 0.05, y: 0.05}
+        m_Offset: {x: 1.39, y: 1}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -61,8 +61,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: b0fe82528f70e8947aa0d123fa3194fe, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 1, y: 1}
+        m_Scale: {x: 0.05, y: 0.05}
+        m_Offset: {x: 1.39, y: 1}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
