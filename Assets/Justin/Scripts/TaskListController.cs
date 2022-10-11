@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class TaskListController : MonoBehaviour
 {
-    [SerializeField] private List<Task> TaskList;
+    [SerializeField] private List<Condition> TaskList;
 
     [SerializeField] private GameObject taskDisplay;
     private void Start()
     {
    
 
-        foreach (Task task in TaskList)
+        foreach (Condition task in TaskList)
         {
             GameObject taskItem = Instantiate(taskDisplay, this.transform);
             taskItem.GetComponent<TaskDisplay>().SetTask(task);
