@@ -22,19 +22,13 @@ public class SceneManagerScript : MonoBehaviour
         
     }
 
-    
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Area0");
-    }
-
     public void QuitGame()
     {
         Application.Quit();
     }
 
     // Scene transitions 
-    // https://youtu.be/CE9VOZivb3I
+    // Code from Brackeys: https://youtu.be/CE9VOZivb3I
     public void NextLevel()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
@@ -53,6 +47,7 @@ public class SceneManagerScript : MonoBehaviour
 
         // load scene
         SceneManager.LoadScene(levelIndex);
+        Debug.Log("Loaded level " + levelIndex);
     }
 
     public void OnTriggerEnter(Collider other)
