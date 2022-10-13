@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.073971614, g: 0.19837977, b: 0.35732603, a: 1}
+  m_IndirectSpecularColor: {r: 0.07457986, g: 0.19842707, b: 0.3572609, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33446,6 +33446,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a767ca57cf24b64c8b4611ca8a0ecf6, type: 3}
+--- !u!1 &679090619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5799013768133451538, guid: 6a767ca57cf24b64c8b4611ca8a0ecf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 679090618}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &679090620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5799013768133451536, guid: 6a767ca57cf24b64c8b4611ca8a0ecf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 679090618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679090619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62111ca2e7143a94b810f60d3d4bb41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &679090621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679090619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65dd64d90103f9f4a9923a9d40341f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 0}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 679090620}
+        m_TargetAssemblyTypeName: TaskListController, Assembly-CSharp
+        m_MethodName: AddTask
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 7719981f765a2ea4087697e3009a811b,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: Condition, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &683889221
 Mesh:
   m_ObjectHideFlags: 0

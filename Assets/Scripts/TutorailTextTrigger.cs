@@ -16,6 +16,8 @@ public class TutorailTextTrigger : MonoBehaviour
     // Bool to keep track of if the text has already been shown to the player.
     private bool triggered = false;
 
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,8 @@ public class TutorailTextTrigger : MonoBehaviour
             
             StartCoroutine(FadeOut());
         }
+        
+        
         
     }
 
