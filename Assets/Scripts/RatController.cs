@@ -10,9 +10,9 @@ public class RatController : MonoBehaviour
 
     private Vector3 velocity;
     private float gravity = -9.8f;
-    public float jumpHeightWithoutGravity = 2f;
+    private float jumpHeightWithoutGravity = 2f;
     public float speed = 5f;
-    public float maxDistanceToJump = 0.6f;
+    public float maxDistanceToJump;
 
     public bool grounded;
     // Start is called before the first frame update
@@ -37,7 +37,14 @@ public class RatController : MonoBehaviour
         controller.Move(movement * (speed * Time.deltaTime));
         
         //Gravity and Jumping
-        velocity.y += gravity * Time.deltaTime;
+        if (!grounded)
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
+        else
+        {
+            velocity.y = 0;
+        }
         
         if (Input.GetButtonDown("Jump") && grounded)
         {
