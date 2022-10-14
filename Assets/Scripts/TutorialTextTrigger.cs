@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -10,10 +11,17 @@ using UnityEngine.UI;
 // https://forum.unity.com/threads/best-way-to-get-swirling-noise.954993/
 
 
-public class TutorailTextTrigger : MonoBehaviour
+public class TutorialTextTrigger : MonoBehaviour
 {
+    [SerializeField]
+    private UnityEvent onTriggerExit;
+    
+    [SerializeField]
+    private UnityEvent onTriggerEnter;
+    
     public TextMeshProUGUI text;
     // Bool to keep track of if the text has already been shown to the player.
+    [SerializeField]
     private bool triggered = false;
 
 
@@ -41,6 +49,7 @@ public class TutorailTextTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && !triggered)
         {
+            onTriggerEnter?.Invoke();
             text.CrossFadeAlpha(1, .5f, false);
 
             text.enabled = true;
@@ -57,6 +66,7 @@ public class TutorailTextTrigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Destroy(text);
+        onTriggerExit?.Invoke();
     }
 
 

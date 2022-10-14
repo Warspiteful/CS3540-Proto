@@ -1410,7 +1410,7 @@ GameObject:
   - component: {fileID: 8940739888825633838}
   m_Layer: 0
   m_Name: Prefab_Rat
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1463,7 +1463,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8940739888825633839}
+  jumpHeightWithoutGravity: 2
   speed: 5
+  maxDistanceToJump: 0.6
+  grounded: 0
 --- !u!1 &8804453450857966678
 GameObject:
   m_ObjectHideFlags: 0

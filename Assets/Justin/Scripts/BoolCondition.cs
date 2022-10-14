@@ -6,10 +6,15 @@ using UnityEngine;
 public class BoolCondition : Condition
 {
     
-    private bool isCompleted;
+    [SerializeField] private bool isCompleted;
 
- 
 
+
+    public void Reset()
+    {
+        isCompleted = false;
+        ValueUpdated();
+    }
     public void SetFlag()
     {
 
