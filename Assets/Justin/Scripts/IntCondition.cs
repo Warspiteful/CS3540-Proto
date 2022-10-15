@@ -21,7 +21,7 @@ public class IntCondition : Condition
         if (value < Max)
         {
             value += 1;
-            ValueUpdated();
+            ValueUpdated?.Invoke();
         }
     }
     
