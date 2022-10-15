@@ -6,10 +6,14 @@ using UnityEngine;
 public class BoolCondition : Condition
 {
     
-    private bool isCompleted;
+    [SerializeField] private bool isCompleted;
 
- 
-
+    public override void resetCondition()
+    {
+        isCompleted = false;
+        ValueUpdated();
+    }
+    
     public void SetFlag()
     {
 
@@ -31,4 +35,6 @@ public class BoolCondition : Condition
     {
         return isCompleted.ToString();
     }
+
+
 }
