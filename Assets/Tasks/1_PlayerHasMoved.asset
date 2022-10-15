@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 1_PlayerHasMoved
   m_EditorClassIdentifier: 
   Description: Use WASD to walk
-  isCompleted: 1
+  isCompleted: 0

@@ -8,13 +8,12 @@ public class BoolCondition : Condition
     
     [SerializeField] private bool isCompleted;
 
-
-
-    public void Reset()
+    public override void resetCondition()
     {
         isCompleted = false;
         ValueUpdated();
     }
+    
     public void SetFlag()
     {
 
@@ -36,4 +35,6 @@ public class BoolCondition : Condition
     {
         return isCompleted.ToString();
     }
+
+
 }

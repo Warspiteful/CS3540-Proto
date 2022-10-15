@@ -9,6 +9,13 @@ public class IntCondition : Condition
     public int value;
     public int Max;
     
+    
+    public override void resetCondition()
+    {
+        value = 0;
+        ValueUpdated();
+    }
+    
     public void Increment()
     {
         if (value < Max)

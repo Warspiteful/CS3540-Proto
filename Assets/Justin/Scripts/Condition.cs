@@ -12,4 +12,6 @@ public abstract class Condition : ScriptableObject
     public abstract ConditionalTasks GetType();
 
     public abstract string GetRepresentation();
+
+    public abstract void resetCondition();
 }
