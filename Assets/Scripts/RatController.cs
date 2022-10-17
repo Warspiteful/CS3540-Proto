@@ -8,6 +8,9 @@ public class RatController : MonoBehaviour
     [SerializeField]
     private CharacterController controller;
 
+    [SerializeField]
+    private Camera mainCamera;
+    
     private Vector3 velocity;
     private float gravity = -9.8f;
     private float jumpHeightWithoutGravity = 2f;
@@ -24,6 +27,7 @@ public class RatController : MonoBehaviour
     void Update()
     {
         Transform playerTransform = transform;
+        Transform cameraTransform = mainCamera.transform;
         //Grounded
         grounded = Physics.Raycast(playerTransform.position, Vector3.down, maxDistanceToJump);
         
@@ -36,6 +40,8 @@ public class RatController : MonoBehaviour
         Vector3 movement = (playerTransform.right * x) + (playerTransform.forward * z);
         controller.Move(movement * (speed * Time.deltaTime));
         
+        //Rotate alongside the camera
+        playerTransform.rotation = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up);
         //Gravity and Jumping
         if (!grounded)
         {
