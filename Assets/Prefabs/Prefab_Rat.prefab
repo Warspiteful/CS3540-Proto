@@ -1447,7 +1447,7 @@ CharacterController:
   m_Radius: 0.45
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!114 &8940739888825633838
@@ -1463,9 +1463,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 8940739888825633839}
-  jumpHeightWithoutGravity: 2
+  mainCamera: {fileID: 0}
   speed: 5
-  maxDistanceToJump: 0.6
+  maxDistanceToJump: 0.02
   grounded: 0
 --- !u!1 &8804453450857966678
 GameObject:
