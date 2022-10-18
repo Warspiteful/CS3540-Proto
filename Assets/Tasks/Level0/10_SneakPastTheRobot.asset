@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15258170f5475d14f89de3a8e59aa7b9, type: 3}
   m_Name: 10_SneakPastTheRobot
   m_EditorClassIdentifier: 
-  Description: Push the boxes to make stairs
+  Description: Sneak past the robot
   isCompleted: 0

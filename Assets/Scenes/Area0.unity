@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07447616, g: 0.19844428, b: 0.35761273, a: 1}
+  m_IndirectSpecularColor: {r: 0.073971614, g: 0.19837977, b: 0.35732603, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25780,7 +25780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gotta have some box pusing puzzles!
+  m_text: Use the boxes to get up to the next room.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f8c0bd4b601c28408dc355631a7a043, type: 2}
   m_sharedMaterial: {fileID: 4127278120105478070, guid: 6f8c0bd4b601c28408dc355631a7a043,
@@ -29959,7 +29959,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 5, z: 3.32}
+  m_Size: {x: 6, y: 5, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &543778520
 Transform:
@@ -29969,7 +29969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543778516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.2399998, y: 3.4509094, z: -19.665785}
+  m_LocalPosition: {x: -2.4899998, y: 3.4509094, z: -18.665785}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43239,7 +43239,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This room uses keys. Keys unlock the door that matches their color.
+  m_text: This room uses keys. Keys unlock the door that matches their color. When
+    you have the matching key, press E near the keypad to unlock the door.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f8c0bd4b601c28408dc355631a7a043, type: 2}
   m_sharedMaterial: {fileID: 4127278120105478070, guid: 6f8c0bd4b601c28408dc355631a7a043,
@@ -43387,7 +43388,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652885359}
-  m_LocalRotation: {x: -0.0004904982, y: 0.95827436, z: -0.28584507, w: -0.0016443587}
+  m_LocalRotation: {x: -0.0004905121, y: 0.95827436, z: -0.28584507, w: -0.0016444054}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45283,7 +45284,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: This door needs its power cut in order to open it. What if you tried biting
-    that wire...?
+    that sparking wire with E...?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f8c0bd4b601c28408dc355631a7a043, type: 2}
   m_sharedMaterial: {fileID: 4127278120105478070, guid: 6f8c0bd4b601c28408dc355631a7a043,
@@ -50745,7 +50746,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 5, z: 8}
+  m_Size: {x: 5, y: 5, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &970928053
 Transform:
@@ -50755,7 +50756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970928049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.360001, y: 3.0509093, z: 18.234217}
+  m_LocalPosition: {x: 11.610001, y: 3.0509093, z: 18.234217}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58629,7 +58630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: See if you can figure this one out yourself.
+  m_text: Pick up and drop barrels with E. Use them to activate pressure plates.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6f8c0bd4b601c28408dc355631a7a043, type: 2}
   m_sharedMaterial: {fileID: 4127278120105478070, guid: 6f8c0bd4b601c28408dc355631a7a043,
@@ -61467,7 +61468,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
+  m_Size: {x: 7, y: 5, z: 7}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1278881229
 Transform:
@@ -61477,7 +61478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278881225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.740002, y: 3.4509094, z: -5.4657893}
+  m_LocalPosition: {x: -12.59, y: 3.4509094, z: -6.2657866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
