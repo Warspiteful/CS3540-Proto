@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,5 +52,15 @@ public class RatController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeightWithoutGravity);
         }
         controller.Move(velocity * Time.deltaTime);
+        
+    }
+
+    // Called when a collider is triggered
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out ItemObject item))
+        {
+            item.OnHandlePickupItem();
+        }
     }
 }
