@@ -25,6 +25,7 @@ public class Activate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        collisions -= 1;
         if (collisions == 0)
         {
             toActivate.SetActive(onByDefault);
