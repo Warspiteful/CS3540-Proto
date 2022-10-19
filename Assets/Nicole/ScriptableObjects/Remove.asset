@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0d472a8a6f0544dda43dee7821d7309, type: 3}
-  m_Name: RemoveRedDoor
+  m_Name: Remove
   m_EditorClassIdentifier: 
   toRemove: {fileID: 7384567608770380091, guid: 969a4ef48e6814a9782110bedd6f44f1,
     type: 3}
