@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15258170f5475d14f89de3a8e59aa7b9, type: 3}
   m_Name: 7_SolveThePuzzle
   m_EditorClassIdentifier: 
-  Description: Solve the puzzle
+  Description: Activate the pressure plate
   isCompleted: 0
