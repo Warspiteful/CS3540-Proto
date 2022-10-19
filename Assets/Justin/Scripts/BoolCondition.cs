@@ -11,14 +11,14 @@ public class BoolCondition : Condition
     public override void resetCondition()
     {
         isCompleted = false;
-        ValueUpdated();
+        ValueUpdated?.Invoke();
     }
     
     public void SetFlag()
     {
 
         isCompleted = true;
-        ValueUpdated();
+        ValueUpdated?.Invoke();
     }
 
     public override bool isComplete()

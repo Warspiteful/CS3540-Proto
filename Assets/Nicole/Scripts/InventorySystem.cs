@@ -43,6 +43,16 @@ public class InventorySystem : MonoBehaviour
             InventoryItem newItem = new InventoryItem(referenceData);
             inventory.Add(newItem);
             m_itemDictionary.Add(referenceData, newItem);
+
+            if (referenceData.condition != null)
+            {
+                switch (referenceData.condition.GetType())
+                {
+                    case ConditionalTasks.BOOL:
+                        ((BoolCondition) referenceData.condition).SetFlag();
+                        break;
+                }
+            }
         }
     }
 
@@ -56,6 +66,16 @@ public class InventorySystem : MonoBehaviour
             {
                 inventory.Remove(value);
                 m_itemDictionary.Remove(referenceData);
+                
+                if (referenceData.condition != null)
+                {
+                    switch (referenceData.condition.GetType())
+                    {
+                        case ConditionalTasks.BOOL:
+                            ((BoolCondition) referenceData.condition).resetCondition();
+                            break;
+                    }
+                }
             }
         }
     }

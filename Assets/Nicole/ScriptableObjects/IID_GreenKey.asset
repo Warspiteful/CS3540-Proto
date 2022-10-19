@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: Green Key
   icon: {fileID: 21300000, guid: 7037090e7b7fb42d7abf7e501aa0df29, type: 3}
   prefab: {fileID: 2708795266325785077, guid: 0daa088658ac88f4281fc5e8626893c7, type: 3}
+  condition: {fileID: 11400000, guid: 4dba8786c5993d34d9444b0a684c728c, type: 2}

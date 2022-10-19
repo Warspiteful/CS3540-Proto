@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15258170f5475d14f89de3a8e59aa7b9, type: 3}
-  m_Name: 4_FindRedKey
+  m_Script: {fileID: 11500000, guid: b0d472a8a6f0544dda43dee7821d7309, type: 3}
+  m_Name: Remove
   m_EditorClassIdentifier: 
-  Description: Locate a red key
-  isCompleted: 1
+  toRemove: {fileID: 7384567608770380091, guid: 969a4ef48e6814a9782110bedd6f44f1,
+    type: 3}

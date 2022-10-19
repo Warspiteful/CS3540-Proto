@@ -16,3 +16,4 @@ MonoBehaviour:
   displayName: Red Key
   icon: {fileID: 21300000, guid: 67ff33faf019e4a08a02cff69ca0750a, type: 3}
   prefab: {fileID: 2537476651919276854, guid: 8e6efce1292d8e14d8c40a5e99467449, type: 3}
+  condition: {fileID: 11400000, guid: 995b8945bba81aa47b3267ba41002b7f, type: 2}
