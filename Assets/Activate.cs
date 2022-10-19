@@ -9,18 +9,25 @@ public class Activate : MonoBehaviour
 
     public bool onByDefault;
 
+    private int collisions;
+
     private void Start()
     {
         toActivate.SetActive(onByDefault);
+        collisions = 0;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         toActivate.SetActive(!onByDefault);
+        collisions += 1;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        toActivate.SetActive(onByDefault);
+        if (collisions == 0)
+        {
+            toActivate.SetActive(onByDefault);
+        }
     }
 }
