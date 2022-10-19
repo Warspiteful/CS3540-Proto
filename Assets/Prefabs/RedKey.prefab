@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2537476651919012566}
   - component: {fileID: 2537476651916113696}
   - component: {fileID: 2537476651917192880}
+  - component: {fileID: 7457596159297921711}
   m_Layer: 0
   m_Name: pPlane3
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7457596159297921711
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537476651919211726}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.41526306
+  m_Height: 1.2605656
+  m_Direction: 1
+  m_Center: {x: 0.062889, y: 0.6277556, z: -0.03202511}
 --- !u!1 &2537476651919276854
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2537476651919043674}
   - component: {fileID: 906392315637243678}
+  - component: {fileID: 773138666852969665}
   m_Layer: 0
   m_Name: RedKey
   m_TagString: Untagged
@@ -136,3 +152,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &773138666852969665
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2537476651919276854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8, z: 0}

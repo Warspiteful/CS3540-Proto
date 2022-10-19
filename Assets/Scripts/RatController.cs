@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class RatController : MonoBehaviour
     private float jumpHeightWithoutGravity = 2f;
     public float speed = 5f;
     public float maxDistanceToJump;
-
+    public bool isHiden;
     public bool grounded;
     // Start is called before the first frame update
     void Start()
@@ -57,5 +58,15 @@ public class RatController : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeightWithoutGravity);
         }
         controller.Move(velocity * Time.deltaTime);
+        
+    }
+
+    // Called when a collider is triggered
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out ItemObject item))
+        {
+            item.OnHandlePickupItem();
+        }
     }
 }
