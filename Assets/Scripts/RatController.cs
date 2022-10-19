@@ -17,7 +17,7 @@ public class RatController : MonoBehaviour
     private float jumpHeightWithoutGravity = 2f;
     public float speed = 5f;
     public float maxDistanceToJump;
-
+    public bool isHiden;
     public bool grounded;
     // Start is called before the first frame update
     void Start()
