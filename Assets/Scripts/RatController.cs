@@ -24,6 +24,14 @@ public class RatController : MonoBehaviour
     {
     }
 
+    public void WasSpotted()
+    {
+        if (!isHiden)
+        {
+            Debug.Log("Spotted");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
