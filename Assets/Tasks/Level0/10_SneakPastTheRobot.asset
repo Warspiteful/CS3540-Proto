@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 10_SneakPastTheRobot
   m_EditorClassIdentifier: 
   Description: Sneak past the robot
-  isCompleted: 0
+  isCompleted: 1

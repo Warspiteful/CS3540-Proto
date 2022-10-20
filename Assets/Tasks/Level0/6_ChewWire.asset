@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 6_ChewWire
   m_EditorClassIdentifier: 
   Description: Chew through the wire (press E on sparks)
-  isCompleted: 0
+  isCompleted: 1

@@ -18829,7 +18829,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2550
+  m_Name: pb_Mesh-2646
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19230,7 +19230,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.27554533, y: -0.1313861, z: 0.038047895, w: 0.9515066}
+  m_LocalRotation: {x: 0.2755453, y: -0.13138606, z: 0.038047876, w: 0.9515067}
   m_LocalPosition: {x: -44.28759, y: 3.4481802, z: -6.536286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19386,7 +19386,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332920638}
-  m_LocalRotation: {x: 0.2755453, y: -0.13138606, z: 0.03804788, w: 0.9515067}
+  m_LocalRotation: {x: 0.27554527, y: -0.13138604, z: 0.038047872, w: 0.9515067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20137,7 +20137,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31014
+  m_Name: pb_Mesh31582
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20906,7 +20906,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401608506}
-  m_LocalRotation: {x: 0.3151195, y: -0.12967885, z: 0.043512363, w: 0.9391431}
+  m_LocalRotation: {x: 0.3151195, y: -0.12967889, z: 0.043512378, w: 0.9391431}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22092,60 +22092,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 447380744}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &447380747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447380746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34a122bc4592eb4bb68c5acc713564f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
-        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
-        m_MethodName: Remove
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 447380746}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
-        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
-        m_MethodName: Use
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: cd32775d1851545e6b3181abb91e21f4,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: InventoryItemData, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 4dba8786c5993d34d9444b0a684c728c, type: 2}
-        m_TargetAssemblyTypeName: BoolCondition, Assembly-CSharp
-        m_MethodName: SetFlag
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  canInteract: 1
-  lockCondition: {fileID: 11400000, guid: 4dba8786c5993d34d9444b0a684c728c, type: 2}
 --- !u!114 &447380748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29773,6 +29719,16 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 2022
       objectReference: {fileID: 0}
+    - target: {fileID: 2023017331455050242, guid: 3bd762b5498bb434c97d46dc35ff1f26,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2023017331455050242, guid: 3bd762b5498bb434c97d46dc35ff1f26,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.47
+      objectReference: {fileID: 0}
     - target: {fileID: 2038414527625934638, guid: 3bd762b5498bb434c97d46dc35ff1f26,
         type: 3}
       propertyPath: m_Mesh
@@ -30010,6 +29966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 704477563, guid: 3bd762b5498bb434c97d46dc35ff1f26, type: 3}
+    - {fileID: 1232311880, guid: 3bd762b5498bb434c97d46dc35ff1f26, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3bd762b5498bb434c97d46dc35ff1f26, type: 3}
 --- !u!1 &600759476
 GameObject:
@@ -36437,6 +36394,66 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 672977428}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &674861697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1232311878, guid: 3bd762b5498bb434c97d46dc35ff1f26,
+    type: 3}
+  m_PrefabInstance: {fileID: 599709640}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &674861699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674861697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34a122bc4592eb4bb68c5acc713564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
+        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
+        m_MethodName: Remove
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 447380746}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
+        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: cd32775d1851545e6b3181abb91e21f4,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: InventoryItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 4dba8786c5993d34d9444b0a684c728c, type: 2}
+        m_TargetAssemblyTypeName: BoolCondition, Assembly-CSharp
+        m_MethodName: SetFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  canInteract: 1
+  lockCondition: {fileID: 11400000, guid: 4dba8786c5993d34d9444b0a684c728c, type: 2}
 --- !u!1 &676315393
 GameObject:
   m_ObjectHideFlags: 0
@@ -41881,7 +41898,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28838
+  m_Name: pb_Mesh29394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44416,7 +44433,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29532
+  m_Name: pb_Mesh30098
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -49386,7 +49403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050675594}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3400002, y: 0.0001, z: -24.265787}
+  m_LocalPosition: {x: -2.3400002, y: 0.0001, z: -24.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -53969,48 +53986,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 155386799}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1149668858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149668856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a34a122bc4592eb4bb68c5acc713564f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
-        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
-        m_MethodName: Remove
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1149668856}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
-        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
-        m_MethodName: Use
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: a5bfe843d467142479d7fb0b4e477b6c,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: InventoryItemData, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  canInteract: 1
-  lockCondition: {fileID: 11400000, guid: 995b8945bba81aa47b3267ba41002b7f, type: 2}
 --- !u!114 &1149668862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64278,7 +64253,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28336
+  m_Name: pb_Mesh28896
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -85548,6 +85523,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2002626300}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2003301072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8247850679368907466, guid: fa4f0259e38efe5428740586a93afb58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1991795813114135641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2003301074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003301072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34a122bc4592eb4bb68c5acc713564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
+        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
+        m_MethodName: Remove
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1149668856}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
+        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: a5bfe843d467142479d7fb0b4e477b6c,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: InventoryItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  canInteract: 1
+  lockCondition: {fileID: 11400000, guid: 995b8945bba81aa47b3267ba41002b7f, type: 2}
 --- !u!4 &2011406232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011765245650, guid: 9732a241b7bd0fa4a8e59553d6d8a2b0,
@@ -92897,6 +92920,7 @@ PrefabInstance:
       objectReference: {fileID: 1759512637}
     m_RemovedComponents:
     - {fileID: 8247850677765772791, guid: fa4f0259e38efe5428740586a93afb58, type: 3}
+    - {fileID: 8247850679368907460, guid: fa4f0259e38efe5428740586a93afb58, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fa4f0259e38efe5428740586a93afb58, type: 3}
 --- !u!4 &2028503350298914872
 Transform:

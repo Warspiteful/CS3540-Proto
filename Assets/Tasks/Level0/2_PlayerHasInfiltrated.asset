@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 2_PlayerHasInfiltrated
   m_EditorClassIdentifier: 
   Description: Infiltrate the facility
-  isCompleted: 0
+  isCompleted: 1
