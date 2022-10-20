@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 3_FindAWayToTheNextRoom
   m_EditorClassIdentifier: 
   Description: Find a way to the next room
-  isCompleted: 0
+  isCompleted: 1

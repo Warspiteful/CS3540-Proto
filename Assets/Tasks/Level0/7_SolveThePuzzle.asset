@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 7_SolveThePuzzle
   m_EditorClassIdentifier: 
   Description: Activate the pressure plate
-  isCompleted: 0
+  isCompleted: 1

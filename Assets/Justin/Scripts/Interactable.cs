@@ -14,7 +14,10 @@ public class Interactable : MonoBehaviour
     [SerializeField] private Condition lockCondition;
 
 
-
+    private void Start()
+    {
+        canInteract = false;
+    }
 
     private void Update()
     {
