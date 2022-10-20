@@ -119,7 +119,11 @@ public class FieldOfView : MonoBehaviour
                 float dstToTarget = Vector3.Distance(target.position, transform.position);
                 if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    visibleTargets.Add(target);
+                    RatController rat = target.GetComponent<RatController>();
+                    if (rat != null)
+                    {
+                        rat.WasSpotted();
+                    }
                 }
             }
         }
