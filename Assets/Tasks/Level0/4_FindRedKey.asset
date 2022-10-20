@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 4_FindRedKey
   m_EditorClassIdentifier: 
   Description: Locate a red key
-  isCompleted: 1
+  isCompleted: 0

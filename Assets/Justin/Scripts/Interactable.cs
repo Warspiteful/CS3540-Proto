@@ -14,6 +14,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] private Condition lockCondition;
 
 
+
+
     private void Update()
     {
         if(canInteract)

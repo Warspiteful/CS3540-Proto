@@ -1467,6 +1467,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   speed: 5
   maxDistanceToJump: 0.02
+  isHiden: 0
   grounded: 0
 --- !u!114 &1944353059319502968
 MonoBehaviour:
