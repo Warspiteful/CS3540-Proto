@@ -7,7 +7,10 @@ public class TaskListController : MonoBehaviour
 {
     [SerializeField] private List<Condition> TaskList;
 
-    [SerializeField] private GameObject taskDisplay;
+    [SerializeField] private TaskDisplay taskDisplay;
+    
+    [SerializeField] private Transform parent;
+
 
     private void Start()
     {
@@ -17,16 +20,15 @@ public class TaskListController : MonoBehaviour
     // https://answers.unity.com/questions/611850/destroy-all-children-of-object.html
     private void UpdateDisplay()
     {
-        foreach (Transform child in this.transform)
+        foreach (Transform child in parent)
         {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
 
 
         foreach (Condition task in TaskList)
         {
-            GameObject taskItem = Instantiate(taskDisplay, this.transform);
-            taskItem.GetComponent<TaskDisplay>().SetTask(task);
+          Instantiate(taskDisplay, parent).SetTask(task);
         }
     }
 

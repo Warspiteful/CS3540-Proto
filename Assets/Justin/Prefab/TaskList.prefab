@@ -36,11 +36,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 380, y: 436}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &5799013768133451567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 15
     m_Bottom: 15
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
@@ -117,11 +117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62111ca2e7143a94b810f60d3d4bb41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TaskList:
-  - {fileID: 11400000, guid: 3a2e1816ad332604cb086ecf223d76d0, type: 2}
-  - {fileID: 11400000, guid: 89122823dd7591741a8692d1c0522575, type: 2}
-  taskDisplay: {fileID: 5884198804562451595, guid: 92d5c612c05a9f547b5073eea9467b0d,
+  TaskList: []
+  taskDisplay: {fileID: 2770324003610048001, guid: 92d5c612c05a9f547b5073eea9467b0d,
     type: 3}
+  parent: {fileID: 0}
 --- !u!114 &5799013768133451564
 MonoBehaviour:
   m_ObjectHideFlags: 0
