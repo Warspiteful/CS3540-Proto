@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 // ReSharper disable SuggestVarOrType_BuiltInTypes
 
 public class RatController : MonoBehaviour
@@ -28,7 +29,8 @@ public class RatController : MonoBehaviour
     {
         if (!isHiden)
         {
-            Debug.Log("Spotted");
+            Debug.Log("Rat seen, dead! Back to start point");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
