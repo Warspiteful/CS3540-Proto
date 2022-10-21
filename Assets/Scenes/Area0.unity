@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07447616, g: 0.19844428, b: 0.35761273, a: 1}
+  m_IndirectSpecularColor: {r: 0.073971614, g: 0.19837977, b: 0.35732603, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19231,7 +19231,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.27554533, y: -0.13138612, z: 0.038047895, w: 0.9515067}
+  m_LocalRotation: {x: 0.2755453, y: -0.13138606, z: 0.038047876, w: 0.9515067}
   m_LocalPosition: {x: -44.28759, y: 3.4481802, z: -6.536286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19387,7 +19387,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332920638}
-  m_LocalRotation: {x: 0.2755453, y: -0.13138606, z: 0.03804788, w: 0.9515067}
+  m_LocalRotation: {x: 0.27554527, y: -0.13138604, z: 0.038047872, w: 0.9515067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20907,7 +20907,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401608506}
-  m_LocalRotation: {x: 0.3151195, y: -0.12967885, z: 0.043512363, w: 0.9391431}
+  m_LocalRotation: {x: 0.3151195, y: -0.12967889, z: 0.043512378, w: 0.9391431}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46818,8 +46818,7 @@ MonoBehaviour:
   onTriggerEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5799013768133451536, guid: 6a767ca57cf24b64c8b4611ca8a0ecf6,
-          type: 3}
+      - m_Target: {fileID: 5799013767732496042}
         m_TargetAssemblyTypeName: TaskListController, Assembly-CSharp
         m_MethodName: AddTask
         m_Mode: 2
@@ -95287,6 +95286,7 @@ GameObject:
   - component: {fileID: 5799013767732496043}
   - component: {fileID: 5799013767732496042}
   - component: {fileID: 5799013767732496022}
+  - component: {fileID: 5799013767732496044}
   m_Layer: 5
   m_Name: TaskList
   m_TagString: Untagged
@@ -95356,6 +95356,29 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &5799013767732496044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799013767732496040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff397714cde0ab4d8ebf30276f87b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tasks:
+  - {fileID: 11400000, guid: f47f640fdbf9b6f45a1b5045310739bd, type: 2}
+  - {fileID: 11400000, guid: f2835ad7b139f6741a62433102e6b059, type: 2}
+  - {fileID: 11400000, guid: 5cd142490b1a8d4469af120cb9980a0a, type: 2}
+  - {fileID: 11400000, guid: 995b8945bba81aa47b3267ba41002b7f, type: 2}
+  - {fileID: 11400000, guid: 4dba8786c5993d34d9444b0a684c728c, type: 2}
+  - {fileID: 11400000, guid: 202dd96b9bf1b5d4f8fe3f17d53c5638, type: 2}
+  - {fileID: 11400000, guid: 17085c5a24f3db84989642c3089d6228, type: 2}
+  - {fileID: 11400000, guid: 9aeac7204cbf5fd41ad41c1531e8d5af, type: 2}
+  - {fileID: 11400000, guid: d1ce099995c5a444c8bf987826b8501e, type: 2}
+  - {fileID: 11400000, guid: 3157ec5750e7343648cc91963e12515e, type: 2}
 --- !u!4 &5852909588350398966
 Transform:
   m_ObjectHideFlags: 0
