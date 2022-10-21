@@ -67,6 +67,7 @@ public class InventorySystem : MonoBehaviour
                 inventory.Remove(value);
                 m_itemDictionary.Remove(referenceData);
                 
+                /**
                 if (referenceData.condition != null)
                 {
                     switch (referenceData.condition.GetType())
@@ -76,6 +77,7 @@ public class InventorySystem : MonoBehaviour
                             break;
                     }
                 }
+                **/
             }
         }
     }
