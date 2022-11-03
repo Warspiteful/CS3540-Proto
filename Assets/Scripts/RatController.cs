@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 // ReSharper disable SuggestVarOrType_BuiltInTypes
 
 public class RatController : MonoBehaviour
@@ -20,6 +21,7 @@ public class RatController : MonoBehaviour
     public float maxDistanceToJump;
     public bool isHiden;
     public bool grounded;
+    public GameObject vignette;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,21 @@ public class RatController : MonoBehaviour
         {
             Debug.Log("Rat seen, dead! Back to start point");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    // vignette effect in shadow
+    public void ToggleVignette(bool isHiden)
+    {
+        if (isHiden)
+        {
+            vignette.SetActive(true);
+            vignette.GetComponent<RawImage>().CrossFadeAlpha(1.0f, 0.3f,false);
+        }
+        else
+        {   
+            // vignette.SetActive(false);
+            vignette.GetComponent<RawImage>().CrossFadeAlpha(0.0f, 0.2f,false);
         }
     }
 
