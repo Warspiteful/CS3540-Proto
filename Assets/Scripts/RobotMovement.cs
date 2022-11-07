@@ -10,7 +10,6 @@ public class RobotMovement : MonoBehaviour
     public float moveTime;
     public float rotationSpeed;
     private float currTime = 0;
-
     
     // Start is called before the first frame update
     void Start()
