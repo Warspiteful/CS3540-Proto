@@ -9,7 +9,16 @@ public class PickUpObject : MonoBehaviour
     public float distance;
     public float height = 1;
     public float smooth;
-
+    
+    void OnDrawGizmos()
+    {
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, transform.forward );
+        //Draw a cube that extends to where the hit exists
+        Gizmos.DrawWireCube(transform.position + transform.forward , transform.localScale);
+    }
+    
     // Update is called once per frame
     // based on this tutorial: https://www.youtube.com/watch?v=runW-mf1UH0
     void Update () {
@@ -36,7 +45,8 @@ public class PickUpObject : MonoBehaviour
         } else {
             if(Input.GetKeyDown (KeyCode.E)) {
                 RaycastHit hit;
-                if(Physics.Raycast(rat.position, rat.forward, out hit))
+                
+                if(Physics.BoxCast(rat.position + rat.forward, new Vector3(5, 5, 5), rat.forward, out hit))
                 {
                     var hitObject = hit.transform.gameObject;
                     if (hitObject.CompareTag("Pickupable"))

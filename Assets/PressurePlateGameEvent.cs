@@ -22,10 +22,10 @@ public class PressurePlateGameEvent : MonoBehaviour
     {
         doorAnimator = door.GetComponent<Animator>();
         collisions = 0;
-        https://youtu.be/15n-ilpYqME
-        Gizmos.DrawLine(this.transform.position, doorAnimator.transform.position);
+        //https://youtu.be/15n-ilpYqME
 
     }
+    
 
     private void Update()
     {
