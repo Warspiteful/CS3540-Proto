@@ -26,7 +26,7 @@ public class Shadow : MonoBehaviour
         if (other.tag == "Player")
         {
             rat = other.gameObject.GetComponent<RatController>();
-            rat.isHiden = true;
+            rat.isHidden = true;
             rat.ToggleVignette(true);
         }
     }
@@ -36,7 +36,7 @@ public class Shadow : MonoBehaviour
         if (other.tag == "Player")
         {   
             rat = other.gameObject.GetComponent<RatController>();
-            rat.isHiden = false;
+            rat.isHidden = false;
             rat.ToggleVignette(false);
         }
     }
