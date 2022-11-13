@@ -1641,9 +1641,11 @@ MonoBehaviour:
   controller: {fileID: 8940739888825633839}
   mainCamera: {fileID: 0}
   speed: 5
+  runSpeed: 10
   maxDistanceToJump: 0.02
-  isHiden: 0
+  isHidden: 0
   grounded: 0
+  vignette: {fileID: 0}
 --- !u!114 &1944353059319502968
 MonoBehaviour:
   m_ObjectHideFlags: 0
