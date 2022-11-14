@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // ReSharper disable SuggestVarOrType_BuiltInTypes
@@ -14,11 +15,10 @@ public class RatController : MonoBehaviour
     [SerializeField] private Camera mainCamera;
 
     private Vector3 velocity;
-    private float gravity = -9.8f;
-    private float jumpHeightWithoutGravity = 2f;
-    public float speed = 5f;
+    public float gravity = -9.8f;
+    public float jumpHeightWithoutGravity = 2f;
+    public float speed = 6f;
     public float runSpeed = 10f;
-    public float maxDistanceToJump;
     public bool isHidden;
     public bool grounded;
 
@@ -39,9 +39,9 @@ public class RatController : MonoBehaviour
     }
 
     // vignette effect in shadow
-    public void ToggleVignette(bool isHiden)
+    public void ToggleVignette(bool isHidden)
     {
-        if (isHiden)
+        if (isHidden)
         {
             vignette.SetActive(true);
             vignette.GetComponent<RawImage>().CrossFadeAlpha(1.0f, 0.3f, false);
@@ -58,8 +58,7 @@ public class RatController : MonoBehaviour
     {
         Transform playerTransform = transform;
         Transform cameraTransform = mainCamera.transform;
-        //Grounded
-        grounded = Physics.Raycast(playerTransform.position, Vector3.down, maxDistanceToJump);
+        var sprinting = Input.GetKey(KeyCode.LeftShift);
 
         //Movement
         float x = Input.GetAxis("Horizontal");
@@ -68,17 +67,12 @@ public class RatController : MonoBehaviour
 
 
         Vector3 movement = (playerTransform.right * x) + (playerTransform.forward * z);
-        if (movement.magnitude > 0)
+        if (movement.magnitude > 1)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                controller.Move(movement * runSpeed * Time.deltaTime);
-            }
-            else
-            {
-                controller.Move(movement * speed * Time.deltaTime);
-            }
+            movement.Normalize();
         }
+        var currSpeed = sprinting ? runSpeed : this.speed;
+        controller.Move(currSpeed * Time.deltaTime * movement);
 
         //Rotate alongside the camera
         playerTransform.rotation = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up);
@@ -89,7 +83,8 @@ public class RatController : MonoBehaviour
         }
         else
         {
-            velocity.y = 0;
+            // constantly push slightly into the ground so character controller grounded works
+            velocity.y = gravity * .01f;
         }
 
         if (Input.GetButtonDown("Jump") && grounded)
@@ -98,8 +93,9 @@ public class RatController : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
+        grounded = controller.isGrounded;
     }
-
+    
     // Called when a collider is triggered
     private void OnTriggerEnter(Collider other)
     {
@@ -108,4 +104,5 @@ public class RatController : MonoBehaviour
             item.OnHandlePickupItem();
         }
     }
+    
 }

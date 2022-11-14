@@ -1624,7 +1624,7 @@ CharacterController:
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.01
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0.45, z: 0}
 --- !u!114 &8940739888825633838
 MonoBehaviour:
@@ -1640,9 +1640,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 8940739888825633839}
   mainCamera: {fileID: 0}
+  gravity: -10
+  jumpHeightWithoutGravity: 8
   speed: 5
-  runSpeed: 10
-  maxDistanceToJump: 0.02
+  runSpeed: 7
   isHidden: 0
   grounded: 0
   vignette: {fileID: 5682847708469495786}
