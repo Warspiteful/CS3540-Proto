@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,15 +10,17 @@ public class PickUpObject : MonoBehaviour
     public float distance;
     public float height = 1;
     public float smooth;
+    public float radius = 2f;
     
-    void OnDrawGizmos()
-    {
-        
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, transform.forward );
-        //Draw a cube that extends to where the hit exists
-        Gizmos.DrawWireCube(transform.position + transform.forward , transform.localScale);
-    }
+    // void OnDrawGizmos()
+    // {
+    //     var rat = transform;
+    //     
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawRay(transform.position, transform.forward );
+    //     //Draw a cube that extends to where the hit exists
+    //     Gizmos.DrawWireSphere(rat.position + rat.forward, radius);
+    // }
     
     // Update is called once per frame
     // based on this tutorial: https://www.youtube.com/watch?v=runW-mf1UH0
@@ -44,11 +47,14 @@ public class PickUpObject : MonoBehaviour
             }
         } else {
             if(Input.GetKeyDown (KeyCode.E)) {
-                RaycastHit hit;
                 
-                if(Physics.BoxCast(rat.position + rat.forward, new Vector3(5, 5, 5), rat.forward, out hit))
+                var hits = Physics.SphereCastAll(rat.position + rat.forward, radius, rat.forward, radius);
+                var hitIndex = Array.FindIndex(hits, hit => hit.transform.tag == "Pickupable");
+                if(hitIndex != -1)
                 {
+                    var hit = hits[hitIndex];
                     var hitObject = hit.transform.gameObject;
+                    Debug.Log(hitObject.name);
                     if (hitObject.CompareTag("Pickupable"))
                     {
                         carriedObject = hitObject;
