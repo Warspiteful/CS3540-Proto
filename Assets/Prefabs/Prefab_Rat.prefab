@@ -1583,6 +1583,7 @@ GameObject:
   - component: {fileID: 8940739888825633839}
   - component: {fileID: 8940739888825633838}
   - component: {fileID: 1944353059319502968}
+  - component: {fileID: 1298500638}
   m_Layer: 2
   m_Name: Prefab_Rat
   m_TagString: Player
@@ -1640,9 +1641,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 8940739888825633839}
   mainCamera: {fileID: 0}
+  RatAnimator: {fileID: 1298500638}
   gravity: -10
   jumpHeightWithoutGravity: 8
-  speed: 5
+  speed: 4
   runSpeed: 7
   isHidden: 0
   grounded: 0
@@ -1663,6 +1665,26 @@ MonoBehaviour:
   height: 1
   smooth: 16.12
   radius: 0.93
+--- !u!95 &1298500638
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8129712416233452053}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d50b0243ebe24e74daa2fd99032438ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8804453450857966678
 GameObject:
   m_ObjectHideFlags: 0

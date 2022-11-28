@@ -14,11 +14,13 @@ public class RatController : MonoBehaviour
 
     [SerializeField] private Camera mainCamera;
 
+    [SerializeField] private Animator RatAnimator;
+
     private Vector3 velocity;
     public float gravity = -9.8f;
     public float jumpHeightWithoutGravity = 2f;
-    public float speed = 6f;
-    public float runSpeed = 10f;
+    public float speed = 4f;
+    public float runSpeed = 7f;
     public bool isHidden;
     public bool grounded;
 
@@ -60,6 +62,11 @@ public class RatController : MonoBehaviour
         Transform cameraTransform = mainCamera.transform;
         var sprinting = Input.GetKey(KeyCode.LeftShift);
 
+        // if sprinting 
+        // {
+        //     animationController.is
+        // }
+
         //Movement
         float x = Input.GetAxis("Horizontal");
         // ReSharper disable once SuggestVarOrType_BuiltInTypes
@@ -72,6 +79,24 @@ public class RatController : MonoBehaviour
             movement.Normalize();
         }
         var currSpeed = sprinting ? runSpeed : this.speed;
+
+        if (currSpeed == runSpeed)
+        {
+            RatAnimator.SetBool("isRunning", true);
+            RatAnimator.SetBool("isWalking", false);
+        }
+        else if (currSpeed == speed && movement.magnitude > 0)
+        {
+            Debug.Log("is walking");
+            RatAnimator.SetBool("isWalking", true);
+            RatAnimator.SetBool("isRunning", false);
+        }
+        else
+        {
+            RatAnimator.SetBool("isWalking", false);
+            RatAnimator.SetBool("isRunning", false);
+        }
+        
         controller.Move(currSpeed * Time.deltaTime * movement);
 
         //Rotate alongside the camera
@@ -91,6 +116,7 @@ public class RatController : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeightWithoutGravity);
         }
+        RatAnimator.SetBool("isJumping", !grounded);
 
         controller.Move(velocity * Time.deltaTime);
         grounded = controller.isGrounded;
