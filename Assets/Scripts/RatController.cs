@@ -19,8 +19,8 @@ public class RatController : MonoBehaviour
     private Vector3 velocity;
     public float gravity = -9.8f;
     public float jumpHeightWithoutGravity = 2f;
-    public float speed = 6f;
-    public float runSpeed = 10f;
+    public float speed = 4f;
+    public float runSpeed = 7f;
     public bool isHidden;
     public bool grounded;
 
