@@ -126,7 +126,7 @@ public class FieldOfView : MonoBehaviour
                     RatController rat = target.GetComponent<RatController>();
                     if (rat != null)
                     {
-                    onRatSpottedEvent?.Invoke();
+                        onRatSpottedEvent?.Invoke();
                         rat.WasSpotted();
                     }
                 }
