@@ -1643,7 +1643,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   RatAnimator: {fileID: 1298500638}
   gravity: -10
-  jumpHeightWithoutGravity: 8
+  jumpHeightWithoutGravity: 16
   speed: 4
   runSpeed: 7
   isHidden: 0
