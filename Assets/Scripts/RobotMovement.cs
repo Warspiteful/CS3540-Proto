@@ -14,11 +14,12 @@ public class RobotMovement : MonoBehaviour
     private float currTime = 0;
     private float soundTime = 0;
 
-    [SerializeField] private Boundary audioBoundary;
 
     [SerializeField] private AudioSource _source;
 
     [SerializeField] private AudioClips robotWalk;
+
+    [SerializeField] private FieldOfView fov;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,7 @@ public class RobotMovement : MonoBehaviour
         currTime += Time.deltaTime;
         soundTime -= Time.deltaTime;
         
+        if(!fov.isRatFound())
         if (currTime <= moveTime)
         {
             t.position = Vector3.Lerp(start.position, end.position, (currTime / moveTime));
@@ -58,7 +60,7 @@ public class RobotMovement : MonoBehaviour
             t.rotation = Quaternion.Slerp(t.rotation, lookRotation, Time.deltaTime * rotationSpeed);
         }
 
-        if (soundTime <= 0 && audioBoundary.GetEntered())
+        if (soundTime <= 0)
         {
             Tuple<AudioClip, float> pickedClip = robotWalk.PickRandom();
             _source.PlayOneShot(pickedClip.Item1);
@@ -70,4 +72,6 @@ public class RobotMovement : MonoBehaviour
             currTime = 0;
         }
     }
+    
+    
 }

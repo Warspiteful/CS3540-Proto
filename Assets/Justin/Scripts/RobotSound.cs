@@ -31,13 +31,13 @@ public class RobotSound : MonoBehaviour
     
     public void PlayDetectionSound()
     {
-      if(!oneShotSource.isPlaying){
+      
       oneShotSource.PlayOneShot(detectionSound);
-      }
+      
     }
 
-    public float GetWalkLength()
+    public float GetDetectionLength()
     {
-        return walkingSound.length;
+        return detectionSound.length;
     }
 }
