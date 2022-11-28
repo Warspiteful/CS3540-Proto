@@ -23,12 +23,14 @@ public class RatController : MonoBehaviour
     public float runSpeed = 7f;
     public bool isHidden;
     public bool grounded;
+    [SerializeField] private bool canMove;
 
     public GameObject vignette;
 
     // Start is called before the first frame update
     void Start()
     {
+        canMove = true;
     }
 
     public void WasSpotted()
@@ -58,6 +60,7 @@ public class RatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(canMove){
         Transform playerTransform = transform;
         Transform cameraTransform = mainCamera.transform;
         var sprinting = Input.GetKey(KeyCode.LeftShift);
@@ -119,6 +122,7 @@ public class RatController : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
         grounded = controller.isGrounded;
+        }
     }
     
     // Called when a collider is triggered
@@ -129,5 +133,9 @@ public class RatController : MonoBehaviour
             item.OnHandlePickupItem();
         }
     }
-    
+
+    public void StopMovement()
+    {
+        canMove = false;
+    }
 }

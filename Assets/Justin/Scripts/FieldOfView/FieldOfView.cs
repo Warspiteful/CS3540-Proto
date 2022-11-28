@@ -162,7 +162,7 @@ public class FieldOfView : MonoBehaviour
 
     IEnumerator RatDetected(RatController rat)
     {
-
+        rat.StopMovement();
         _sound.PlayDetectionSound();
         yield return new WaitForSeconds(_sound.GetDetectionLength());
         rat.WasSpotted();
