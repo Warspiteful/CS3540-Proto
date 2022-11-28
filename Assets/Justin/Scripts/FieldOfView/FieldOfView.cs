@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class FieldOfView : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class FieldOfView : MonoBehaviour
     
     [Range(0,360)]
     [SerializeField] private float viewAngle;
+    
+    [SerializeField] private UnityEvent onRatSpottedEvent;
     
     public List<Transform> visibleTargets = new List<Transform>();
 
@@ -122,6 +126,7 @@ public class FieldOfView : MonoBehaviour
                     RatController rat = target.GetComponent<RatController>();
                     if (rat != null)
                     {
+                    onRatSpottedEvent?.Invoke();
                         rat.WasSpotted();
                     }
                 }

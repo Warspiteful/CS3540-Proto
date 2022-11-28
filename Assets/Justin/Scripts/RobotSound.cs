@@ -9,19 +9,34 @@ public class RobotSound : MonoBehaviour
 
     [SerializeField] private AudioClip walkingSound;
     [SerializeField] private AudioClip detectionSound;
-    private AudioSource source;
+    [SerializeField] private AudioSource oneShotSource;
+    [SerializeField] private AudioSource loopingSource;
+
     private void Start()
     {
-        source = GetComponent<AudioSource>();
+        oneShotSource = GetComponent<AudioSource>();
+        loopingSource = GetComponent<AudioSource>();
     }
 
     public void PlayWalkingSound()
     {
-        source.PlayOneShot(walkingSound);
+        oneShotSource.PlayOneShot(walkingSound);
+    }
+    
+    public void PlayWalkingSoundLoop()
+    {
+        loopingSource.clip = walkingSound;
+        loopingSource.Play();
     }
     
     public void PlayDetectionSound()
     {
-        source.PlayOneShot(detectionSound);
+      
+      oneShotSource.PlayOneShot(detectionSound);
+    }
+
+    public float GetWalkLength()
+    {
+        return walkingSound.length;
     }
 }
