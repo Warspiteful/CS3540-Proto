@@ -87,7 +87,6 @@ public class RatController : MonoBehaviour
         }
         else if (currSpeed == speed && movement.magnitude > 0)
         {
-            Debug.Log("is walking");
             RatAnimator.SetBool("isWalking", true);
             RatAnimator.SetBool("isRunning", false);
         }

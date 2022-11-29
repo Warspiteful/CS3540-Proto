@@ -11,4 +11,9 @@ public class InventoryItemData : ScriptableObject
     public Sprite icon;
     public GameObject prefab;
     public Condition condition;
+
+    public override string ToString()
+    {
+        return "Name: " + displayName + ", icon: " + !icon.Equals(null);
+    }
 }
