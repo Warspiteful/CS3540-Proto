@@ -35,6 +35,7 @@ public class Interactable : MonoBehaviour
     {
         
         onInteract?.Invoke();
+        this.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
