@@ -11,6 +11,8 @@ public class Activate : MonoBehaviour
 
     private int collisions;
 
+    public float distance = .05f;
+
     private void Start()
     {
         toActivate.SetActive(onByDefault);
@@ -20,6 +22,11 @@ public class Activate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         toActivate.SetActive(!onByDefault);
+        if (collisions == 0)
+        {
+            transform.position -= Vector3.up * distance;
+            GetComponent<BoxCollider>().center += Vector3.up * distance;
+        }
         collisions += 1;
     }
 
@@ -29,6 +36,8 @@ public class Activate : MonoBehaviour
         if (collisions == 0)
         {
             toActivate.SetActive(onByDefault);
+            transform.position += Vector3.up * distance;
+            GetComponent<BoxCollider>().center -= Vector3.up * distance;
         }
     }
 }
