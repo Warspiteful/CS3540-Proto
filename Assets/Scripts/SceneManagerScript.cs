@@ -10,16 +10,11 @@ public class SceneManagerScript : MonoBehaviour
 
     public float transitionTime = 1f;
 
-    public Transform spawnPoint;
 
     public GameObject player;
     
     // Start is called before the first frame update
-    void Start()
-    {
-        player.transform.position = spawnPoint.position;
-        player.transform.rotation = spawnPoint.rotation;
-    }
+
 
     // Update is called once per frame
     void Update()

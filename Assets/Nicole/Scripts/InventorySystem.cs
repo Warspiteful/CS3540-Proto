@@ -11,6 +11,10 @@ public class InventorySystem : MonoBehaviour
     public List<InventoryItem> inventory { get; private set; }
     private static InventorySystem _instance;
 
+    // Eventing for UI
+    public delegate void OnInventoryChangeEventDelegate();
+    public event OnInventoryChangeEventDelegate OnInventoryChangeEvent;
+
     // Implementing the Singleton pattern
     public static InventorySystem Current
     {
@@ -30,6 +34,7 @@ public class InventorySystem : MonoBehaviour
         inventory = new List<InventoryItem>();
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
         _instance = this;
+        OnInventoryChangeEvent();
     }
 
     public void Add(InventoryItemData referenceData)
@@ -54,6 +59,8 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
+
+        OnInventoryChangeEvent();
     }
 
     public void Remove(InventoryItemData referenceData)
@@ -66,20 +73,10 @@ public class InventorySystem : MonoBehaviour
             {
                 inventory.Remove(value);
                 m_itemDictionary.Remove(referenceData);
-                
-                /**
-                if (referenceData.condition != null)
-                {
-                    switch (referenceData.condition.GetType())
-                    {
-                        case ConditionalTasks.BOOL:
-                            ((BoolCondition) referenceData.condition).resetCondition();
-                            break;
-                    }
-                }
-                **/
             }
         }
+
+        OnInventoryChangeEvent();
     }
 
     [Serializable]
@@ -102,6 +99,11 @@ public class InventorySystem : MonoBehaviour
         public void RemoveFromStack()
         {
             stackSize--;
+        }
+        
+        public override string ToString()
+        {
+            return data + ": " + stackSize;
         }
     }
 }

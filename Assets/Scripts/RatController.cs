@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 // ReSharper disable SuggestVarOrType_BuiltInTypes
 
+
+[RequireComponent(typeof(RatSounds))]
 public class RatController : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
@@ -23,12 +25,17 @@ public class RatController : MonoBehaviour
     public float runSpeed = 7f;
     public bool isHidden;
     public bool grounded;
+    [SerializeField] private bool canMove;
 
     public GameObject vignette;
+
+    private RatSounds _sound;
 
     // Start is called before the first frame update
     void Start()
     {
+        _sound = GetComponent<RatSounds>();
+        canMove = true;
     }
 
     public void WasSpotted()
@@ -58,6 +65,7 @@ public class RatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(canMove){
         Transform playerTransform = transform;
         Transform cameraTransform = mainCamera.transform;
         var sprinting = Input.GetKey(KeyCode.LeftShift);
@@ -84,12 +92,14 @@ public class RatController : MonoBehaviour
         {
             RatAnimator.SetBool("isRunning", true);
             RatAnimator.SetBool("isWalking", false);
+            _sound.PlayRunning();
+            
         }
         else if (currSpeed == speed && movement.magnitude > 0)
         {
-            Debug.Log("is walking");
             RatAnimator.SetBool("isWalking", true);
             RatAnimator.SetBool("isRunning", false);
+            _sound.PlayFootsteps();
         }
         else
         {
@@ -114,12 +124,14 @@ public class RatController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            _sound.PlayJump();
             velocity.y = Mathf.Sqrt(jumpHeightWithoutGravity);
         }
         RatAnimator.SetBool("isJumping", !grounded);
 
         controller.Move(velocity * Time.deltaTime);
         grounded = controller.isGrounded;
+        }
     }
     
     // Called when a collider is triggered
@@ -130,5 +142,9 @@ public class RatController : MonoBehaviour
             item.OnHandlePickupItem();
         }
     }
-    
+
+    public void StopMovement()
+    {
+        canMove = false;
+    }
 }

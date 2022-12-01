@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class FieldOfView : MonoBehaviour
 {
@@ -11,18 +13,25 @@ public class FieldOfView : MonoBehaviour
     
     [Range(0,360)]
     [SerializeField] private float viewAngle;
+
+    [SerializeField] private RobotSound _sound;
+    
+    [SerializeField] private UnityEvent onRatSpottedEvent;
     
     public List<Transform> visibleTargets = new List<Transform>();
 
     [SerializeField] private MeshFilter viewMeshFilter;
     private Mesh viewMesh;
-    [SerializeField] private float meshResolution; 
+    [SerializeField] private float meshResolution;
+
+    [SerializeField] private bool foundRat;
     void Start()
     {
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
         StartCoroutine("FindTargetsWithDelay", 0.2f);
+        foundRat = false;   
     }
     IEnumerator FindTargetsWithDelay(float delay)
     {
@@ -120,9 +129,11 @@ public class FieldOfView : MonoBehaviour
                 if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     RatController rat = target.GetComponent<RatController>();
-                    if (rat != null)
+                    if (rat != null && foundRat == false)
                     {
-                        rat.WasSpotted();
+                        StartCoroutine(RatDetected(rat));
+                        foundRat = true;
+
                     }
                 }
             }
@@ -147,5 +158,18 @@ public class FieldOfView : MonoBehaviour
     public float GetAngle()
     {
         return viewAngle;
+    }
+
+    IEnumerator RatDetected(RatController rat)
+    {
+        rat.StopMovement();
+        _sound.PlayDetectionSound();
+        yield return new WaitForSeconds(_sound.GetDetectionLength());
+        rat.WasSpotted();
+    }
+
+    public bool isRatFound()
+    {
+        return foundRat;
     }
 }
