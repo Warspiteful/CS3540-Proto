@@ -34,6 +34,7 @@ public class TaskListController : MonoBehaviour
 
     public void AddTask(Condition task)
     {
+        
         TaskList.Add(task);
         UpdateDisplay();
     }

@@ -7,10 +7,11 @@ public class TaskReset : MonoBehaviour
 
     [SerializeField] private List<Condition> tasks;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         foreach (Condition con in tasks)
         {
+            Debug.Log("RESET" + con.name);
             con.resetCondition();
         }
     }

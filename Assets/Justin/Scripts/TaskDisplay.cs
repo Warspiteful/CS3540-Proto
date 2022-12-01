@@ -29,6 +29,12 @@ public class TaskDisplay : MonoBehaviour
         UpdateDisplay();
     }
 
+    private void OnDisable()
+    {
+        observedTask.ValueUpdated -= UpdateDisplay;
+
+    }
+
     // Start is called before the first frame update
     void UpdateDisplay()
     {
