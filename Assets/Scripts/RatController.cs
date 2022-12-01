@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 // ReSharper disable SuggestVarOrType_BuiltInTypes
 
+
+[RequireComponent(typeof(RatSounds))]
 public class RatController : MonoBehaviour
 {
     [SerializeField] private CharacterController controller;
@@ -27,9 +29,12 @@ public class RatController : MonoBehaviour
 
     public GameObject vignette;
 
+    private RatSounds _sound;
+
     // Start is called before the first frame update
     void Start()
     {
+        _sound = GetComponent<RatSounds>();
         canMove = true;
     }
 
@@ -87,11 +92,14 @@ public class RatController : MonoBehaviour
         {
             RatAnimator.SetBool("isRunning", true);
             RatAnimator.SetBool("isWalking", false);
+            _sound.PlayRunning();
+            
         }
         else if (currSpeed == speed && movement.magnitude > 0)
         {
             RatAnimator.SetBool("isWalking", true);
             RatAnimator.SetBool("isRunning", false);
+            _sound.PlayFootsteps();
         }
         else
         {
@@ -116,6 +124,7 @@ public class RatController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            _sound.PlayJump();
             velocity.y = Mathf.Sqrt(jumpHeightWithoutGravity);
         }
         RatAnimator.SetBool("isJumping", !grounded);
