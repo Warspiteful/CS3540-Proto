@@ -4,23 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.ProBuilder.Shapes;
+using UnityEngine.Serialization;
+
 
 public class PressurePlateGameEvent : MonoBehaviour
 {
     private int collisions;
 
-    [SerializeField]
-    private GameObject door;
+    [FormerlySerializedAs("door")] [SerializeField]
+    private GameObject activatable;
 
-    private Animator doorAnimator;
+    private Animator animator;
     
     private UnityEvent event1;
     private UnityEvent event2;
 
+    public float distance = .1f;
+
+    public string activateAnimation;
+
+    public string deActivateAnimation;
+
 
     private void Start()
     {
-        doorAnimator = door.GetComponent<Animator>();
+        animator = activatable.GetComponent<Animator>();
         collisions = 0;
         //https://youtu.be/15n-ilpYqME
 
@@ -29,7 +37,7 @@ public class PressurePlateGameEvent : MonoBehaviour
 
     private void Update()
     {
-        Debug.DrawLine(this.transform.position, door.transform.position, Color.magenta);
+        Debug.DrawLine(this.transform.position, activatable.transform.position, Color.magenta);
     }
 
 
@@ -37,7 +45,9 @@ public class PressurePlateGameEvent : MonoBehaviour
     {
         if (collisions == 0)
         {
-            doorAnimator.Play("DoorAnimation");
+            animator.Play(activateAnimation);
+            transform.position -= Vector3.up * distance;
+            GetComponent<BoxCollider>().center += Vector3.up * distance;
         }
         collisions += 1;
     }
@@ -47,7 +57,9 @@ public class PressurePlateGameEvent : MonoBehaviour
         collisions -= 1;
         if (collisions == 0)
         {
-            doorAnimator.Play("DoorClose");
+            animator.Play(deActivateAnimation);
+            transform.position += Vector3.up * distance;
+            GetComponent<BoxCollider>().center -= Vector3.up * distance;
 
         }
     }
