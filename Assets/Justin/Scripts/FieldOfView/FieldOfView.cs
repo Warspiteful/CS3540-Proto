@@ -131,8 +131,10 @@ public class FieldOfView : MonoBehaviour
                     RatController rat = target.GetComponent<RatController>();
                     if (rat != null && foundRat == false)
                     {
-                        StartCoroutine(RatDetected(rat));
-                        foundRat = true;
+                        if(rat.checkIsHidden()){
+                            StartCoroutine(RatDetected(rat));
+                            foundRat = true;
+                        }
 
                     }
                 }

@@ -38,6 +38,10 @@ public class RatController : MonoBehaviour
         canMove = true;
     }
 
+    public bool checkIsHidden()
+    {
+        return !isHidden;
+    }
     public void WasSpotted()
     {
         if (!isHidden)
@@ -92,14 +96,20 @@ public class RatController : MonoBehaviour
         {
             RatAnimator.SetBool("isRunning", true);
             RatAnimator.SetBool("isWalking", false);
-            _sound.PlayRunning();
-            
+            if (grounded)
+            {
+                _sound.PlayRunning();
+            }
+
         }
         else if (currSpeed == speed && movement.magnitude > 0)
         {
             RatAnimator.SetBool("isWalking", true);
             RatAnimator.SetBool("isRunning", false);
-            _sound.PlayFootsteps();
+            if(grounded)
+            {
+                _sound.PlayFootsteps();
+            }
         }
         else
         {
