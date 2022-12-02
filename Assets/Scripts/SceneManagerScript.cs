@@ -12,6 +12,7 @@ public class SceneManagerScript : MonoBehaviour
 
 
     public GameObject player;
+    public bool resetLevelIndex;
     
     // Start is called before the first frame update
 
@@ -32,6 +33,10 @@ public class SceneManagerScript : MonoBehaviour
     public void NextLevel()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (resetLevelIndex)
+        {
+            nextSceneIndex = 0;
+        }
 
         StartCoroutine(LoadLevel(nextSceneIndex));
 
