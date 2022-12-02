@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This doesn't technically need to be a MonoBehaviour, but having it makes it easier to debug in the Editor
-public class InventorySystem : MonoBehaviour
+public class InventorySystem
 {
 
     private Dictionary<InventoryItemData, InventoryItem> m_itemDictionary;
@@ -23,18 +23,18 @@ public class InventorySystem : MonoBehaviour
             if (_instance == null)
             {
                 Debug.Log("Inventory system is null");
+                _instance = new InventorySystem();
             }
 
             return _instance;
         }
     }
 
-    private void Awake()
+    public InventorySystem()
     {
         inventory = new List<InventoryItem>();
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
         _instance = this;
-        OnInventoryChangeEvent();
     }
 
     public void Add(InventoryItemData referenceData)
@@ -60,7 +60,7 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-        OnInventoryChangeEvent();
+        OnInventoryChangeEvent?.Invoke();
     }
 
     public void Remove(InventoryItemData referenceData)
@@ -76,7 +76,7 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-        OnInventoryChangeEvent();
+        OnInventoryChangeEvent?.Invoke();
     }
 
     [Serializable]
