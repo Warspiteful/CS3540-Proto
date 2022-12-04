@@ -20,14 +20,7 @@ public class PressurePlateGameEvent : MonoBehaviour
     private UnityEvent event2;
 
     public float distance = .1f;
-
-    public string activateAnimation;
-
-    public string deActivateAnimation;
     
-    
-
-
     private void Start()
     {
         animator = activatable.GetComponent<Animator>();
