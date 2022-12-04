@@ -8,8 +8,10 @@ public class RobotMovement2 : RobotMovement
     public float rotateSpeed = 60.0f;
     public float timeBetweenRotation = 5f;
     private bool rotating = false;
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         base.Start();
 
         StartCoroutine("ToggleRotation");
@@ -17,6 +19,7 @@ public class RobotMovement2 : RobotMovement
 
     void Update()
     {
+        animator.SetBool("walking", !rotating);
         if (!rotating)
         {
             base.Update();
