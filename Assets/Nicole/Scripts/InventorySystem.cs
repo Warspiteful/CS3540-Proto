@@ -79,6 +79,13 @@ public class InventorySystem
         OnInventoryChangeEvent?.Invoke();
     }
 
+    public void Reset()
+    {
+        m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
+        inventory = new List<InventoryItem>();
+        // OnInventoryChangeEvent?.Invoke();
+    }
+    
     [Serializable]
     public class InventoryItem
     {

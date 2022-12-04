@@ -48,6 +48,7 @@ public class RatController : MonoBehaviour
         if (!isHidden)
         {
             Debug.Log("Rat seen, dead! Back to start point");
+            InventorySystem.Current.Reset();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
