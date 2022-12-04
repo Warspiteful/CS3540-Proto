@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2850332791746720042}
   - component: {fileID: -3524425303880851599}
   - component: {fileID: -989634221968137405}
+  - component: {fileID: -578217744327009728}
   m_Layer: 0
   m_Name: RedDoor
   m_TagString: Untagged
@@ -98,3 +99,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c04648ec8386f45948f0d3ad52c1615d, type: 2}
+--- !u!114 &-578217744327009728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8605055315722150359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f51e2cf78884ee1bd959d1797b47724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

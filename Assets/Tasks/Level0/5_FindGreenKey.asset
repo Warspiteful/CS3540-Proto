@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: 5_FindGreenKey
   m_EditorClassIdentifier: 
   Description: Locate a green key
-  isCompleted: 1
+  isCompleted: 0
