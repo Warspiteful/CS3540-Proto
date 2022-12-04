@@ -47,16 +47,14 @@ public class PickUpObject : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var t = transform;
         if (heldObject)
         {
+            var t = transform;
             var rigidBody = heldObject.GetComponent<Rigidbody>();
             var moveTo = t.position + distance * t.forward + height * t.up;
             var difference = moveTo - heldObject.transform.position;
             rigidBody.AddForce(difference * 500);
             heldObject.transform.rotation = t.rotation;
         }
-
-
     }
 }
