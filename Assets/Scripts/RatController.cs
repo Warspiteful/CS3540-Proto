@@ -36,6 +36,7 @@ public class RatController : MonoBehaviour
     {
         _sound = GetComponent<RatSounds>();
         canMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public bool checkIsHidden()
