@@ -139,6 +139,11 @@ public class RatController : MonoBehaviour
             _sound.PlayJump();
             velocity.y = Mathf.Sqrt(jumpHeightWithoutGravity);
         }
+        if (Input.GetButtonDown("Interact"))
+        {
+            RatAnimator.SetTrigger("isAttacking");
+            _sound.PlayBiteSound();
+        }
         RatAnimator.SetBool("isJumping", !grounded);
 
         controller.Move(velocity * Time.deltaTime);
@@ -158,5 +163,10 @@ public class RatController : MonoBehaviour
     public void StopMovement()
     {
         canMove = false;
+    }
+
+    public void PlayDeathAnimation()
+    {
+        RatAnimator.SetBool("isDead", true);
     }
 }
