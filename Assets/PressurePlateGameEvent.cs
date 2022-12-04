@@ -24,6 +24,8 @@ public class PressurePlateGameEvent : MonoBehaviour
     public string activateAnimation;
 
     public string deActivateAnimation;
+    
+    
 
 
     private void Start()
@@ -45,7 +47,7 @@ public class PressurePlateGameEvent : MonoBehaviour
     {
         if (collisions == 0)
         {
-            animator.Play(activateAnimation);
+            animator.SetBool("Activated", true);
             transform.position -= Vector3.up * distance;
             GetComponent<BoxCollider>().center += Vector3.up * distance;
         }
@@ -57,7 +59,8 @@ public class PressurePlateGameEvent : MonoBehaviour
         collisions -= 1;
         if (collisions == 0)
         {
-            animator.Play(deActivateAnimation);
+            animator.SetBool("Activated", false);
+
             transform.position += Vector3.up * distance;
             GetComponent<BoxCollider>().center -= Vector3.up * distance;
 
