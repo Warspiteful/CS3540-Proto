@@ -38,6 +38,7 @@ public class SceneManagerScript : MonoBehaviour
             nextSceneIndex = 0;
         }
 
+        InventorySystem.Current.Reset();
         StartCoroutine(LoadLevel(nextSceneIndex));
 
     }
