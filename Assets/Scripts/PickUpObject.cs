@@ -55,7 +55,6 @@ public class PickUpObject : MonoBehaviour
             var difference = moveTo - heldObject.transform.position;
             rigidBody.AddForce(difference * 500);
             heldObject.transform.rotation = t.rotation;
-            
         }
     }
 }

@@ -302,7 +302,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85db5ef4b1570924fade57a9df55455b, type: 2}
+  - {fileID: 2100000, guid: aa382976d563168409ce37158855f22a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -371,4 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2e95af06e3d4c44a2bf472c5154020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
+  activatable: {fileID: 0}
+  distance: 0.05
+  activateAnimation: 
+  deActivateAnimation: 
