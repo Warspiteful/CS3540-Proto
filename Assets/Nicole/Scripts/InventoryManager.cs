@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
     {
         OnUpdateInventory();
         InventorySystem.Current.OnInventoryChangeEvent += OnUpdateInventory;
+        DontDestroyOnLoad(this.gameObject);
     }
     
     // Start is called before the first frame update
