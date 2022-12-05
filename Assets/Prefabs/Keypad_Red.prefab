@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 3907251131863896217, guid: 3bd762b5498bb434c97d46dc35ff1f26,
         type: 3}
       propertyPath: m_Name
-      value: RedKeypad
+      value: Keypad_Red
       objectReference: {fileID: 0}
     - target: {fileID: 4141209636030871310, guid: 3bd762b5498bb434c97d46dc35ff1f26,
         type: 3}
@@ -376,6 +376,12 @@ PrefabInstance:
     - {fileID: 704477563, guid: 3bd762b5498bb434c97d46dc35ff1f26, type: 3}
     - {fileID: 1232311880, guid: 3bd762b5498bb434c97d46dc35ff1f26, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3bd762b5498bb434c97d46dc35ff1f26, type: 3}
+--- !u!82 &4297820066540810917 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5319504232510463529, guid: 3bd762b5498bb434c97d46dc35ff1f26,
+    type: 3}
+  m_PrefabInstance: {fileID: 8247850678447041676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8247850679368907466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1232311878, guid: 3bd762b5498bb434c97d46dc35ff1f26,
@@ -397,13 +403,13 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 740cc8c3131e34b6c92c5dc6f8bf24a3, type: 2}
-        m_TargetAssemblyTypeName: RemoveObject, Assembly-CSharp
-        m_MethodName: Remove
-        m_Mode: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -425,6 +431,18 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 995b8945bba81aa47b3267ba41002b7f, type: 2}
         m_TargetAssemblyTypeName: BoolCondition, Assembly-CSharp
         m_MethodName: SetFlag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4297820066540810917}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

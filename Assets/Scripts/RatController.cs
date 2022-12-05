@@ -74,7 +74,6 @@ public class RatController : MonoBehaviour
         if(canMove){
         Transform playerTransform = transform;
         Transform cameraTransform = mainCamera.transform;
-        var sprinting = Input.GetKey(KeyCode.LeftShift);
 
         // if sprinting 
         // {
@@ -86,8 +85,10 @@ public class RatController : MonoBehaviour
         // ReSharper disable once SuggestVarOrType_BuiltInTypes
         float z = Input.GetAxis("Vertical");
 
-
         Vector3 movement = (playerTransform.right * x) + (playerTransform.forward * z);
+
+        var sprinting = Input.GetKey(KeyCode.LeftShift) && movement.magnitude > 0.1f;
+
         if (movement.magnitude > 1)
         {
             movement.Normalize();
@@ -139,6 +140,11 @@ public class RatController : MonoBehaviour
             _sound.PlayJump();
             velocity.y = Mathf.Sqrt(jumpHeightWithoutGravity);
         }
+        if (Input.GetButtonDown("Interact"))
+        {
+            RatAnimator.SetTrigger("isAttacking");
+            _sound.PlayBiteSound();
+        }
         RatAnimator.SetBool("isJumping", !grounded);
 
         controller.Move(velocity * Time.deltaTime);
@@ -158,5 +164,10 @@ public class RatController : MonoBehaviour
     public void StopMovement()
     {
         canMove = false;
+    }
+
+    public void PlayDeathAnimation()
+    {
+        RatAnimator.SetBool("isDead", true);
     }
 }

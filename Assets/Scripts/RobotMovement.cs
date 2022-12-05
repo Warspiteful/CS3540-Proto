@@ -21,7 +21,7 @@ public class RobotMovement : MonoBehaviour
 
     [SerializeField] private FieldOfView fov;
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         _source = GetComponent<AudioSource>();
         var t = transform;
@@ -30,7 +30,7 @@ public class RobotMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         var t = transform;
         currTime += Time.deltaTime;

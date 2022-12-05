@@ -47,8 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 6974190824917699094}
   transitionTime: 1
-  spawnPoint: {fileID: 0}
   player: {fileID: 0}
+  resetLevelIndex: 0
+  spawnIndex: {fileID: 11400000, guid: de0eeaad360676d4785edb9751636fd8, type: 2}
 --- !u!1 &4890052945956218347
 GameObject:
   m_ObjectHideFlags: 0

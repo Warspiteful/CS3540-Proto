@@ -13,6 +13,8 @@ public class SceneManagerScript : MonoBehaviour
 
     public GameObject player;
     public bool resetLevelIndex;
+
+    public IntVariable spawnIndex;
     
     // Start is called before the first frame update
 
@@ -36,6 +38,10 @@ public class SceneManagerScript : MonoBehaviour
         if (resetLevelIndex)
         {
             nextSceneIndex = 0;
+        }
+        else
+        {
+            spawnIndex.Value = 0;
         }
 
         InventorySystem.Current.Reset();
@@ -65,7 +71,8 @@ public class SceneManagerScript : MonoBehaviour
         }
     }
 
-
-
-
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

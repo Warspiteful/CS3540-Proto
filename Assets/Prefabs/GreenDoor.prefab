@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -902208899726406005}
   - component: {fileID: -8784190432746097369}
   - component: {fileID: -95745298870190870}
+  - component: {fileID: 7455817479829250174}
   m_Layer: 0
   m_Name: GreenDoor
   m_TagString: Untagged
@@ -98,3 +99,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d95ab4b32b2ba478b8fe52d8b1767b9f, type: 2}
+--- !u!114 &7455817479829250174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2248333257905334811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f51e2cf78884ee1bd959d1797b47724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

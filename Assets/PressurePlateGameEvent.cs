@@ -20,12 +20,9 @@ public class PressurePlateGameEvent : MonoBehaviour
     private UnityEvent event2;
 
     public float distance = .1f;
-
-    public string activateAnimation;
-
-    public string deActivateAnimation;
-
-
+    
+    
+    
     private void Start()
     {
         animator = activatable.GetComponent<Animator>();
@@ -45,7 +42,7 @@ public class PressurePlateGameEvent : MonoBehaviour
     {
         if (collisions == 0)
         {
-            animator.Play(activateAnimation);
+            animator.SetBool("Activated", true);
             transform.position -= Vector3.up * distance;
             GetComponent<BoxCollider>().center += Vector3.up * distance;
         }
@@ -57,7 +54,8 @@ public class PressurePlateGameEvent : MonoBehaviour
         collisions -= 1;
         if (collisions == 0)
         {
-            animator.Play(deActivateAnimation);
+            animator.SetBool("Activated", false);
+
             transform.position += Vector3.up * distance;
             GetComponent<BoxCollider>().center -= Vector3.up * distance;
 
