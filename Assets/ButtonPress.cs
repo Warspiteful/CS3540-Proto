@@ -7,6 +7,8 @@ public class ButtonPress : MonoBehaviour
     
     public GameObject activatable;
 
+    public AudioSource source;
+
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,11 @@ public class ButtonPress : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayButtonSound()
+    {
+        source.Play();
     }
 
     public void ActivateDoor()
