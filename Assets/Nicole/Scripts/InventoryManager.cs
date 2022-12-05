@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     public void Awake()
     {
         OnUpdateInventory();
+        InventorySystem.Current.Reset();
         InventorySystem.Current.OnInventoryChangeEvent += OnUpdateInventory;
         DontDestroyOnLoad(this.gameObject);
     }
