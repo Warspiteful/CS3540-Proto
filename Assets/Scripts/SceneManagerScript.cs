@@ -71,7 +71,8 @@ public class SceneManagerScript : MonoBehaviour
         }
     }
 
-
-
-
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
