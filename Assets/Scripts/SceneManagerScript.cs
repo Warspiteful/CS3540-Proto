@@ -59,7 +59,7 @@ public class SceneManagerScript : MonoBehaviour
 
         // load scene
         SceneManager.LoadScene(levelIndex);
-        Debug.Log("Loaded level " + levelIndex);
+        // Debug.Log("Loaded level " + levelIndex);
         
     }
 
